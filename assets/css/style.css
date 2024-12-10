@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color_black: #0c0c0c;
+  --color_white: #ffffff;
+  --color_grey: #e1dfe5;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color_black);
+}
+
+body {
+  background-color: var(--color_grey);
+  color: var(--color_black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 4rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+
+.balls_container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5rem;
+  padding: 10px;
+}
+
+.SuperBalls {
+  display: flex;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  transition: 0.4s all ease-in-out;
+  cursor: pointer;
+}
+
+.SuperBalls:hover {
+  transform: scale(0.95);
+}
+
+.SuperBalls:nth-of-type(1) {
+  background: linear-gradient(45deg, #ae4a74 40%, #2e4057 70%);
+}
+
+.SuperBalls:nth-of-type(2) {
+  background: linear-gradient(to top, #d3a376, #3e2522);
+}
+
+.SuperBalls:nth-of-type(3) {
+  background: conic-gradient(#d3a376, #ef4648);
+}
+
+.SuperBalls:nth-of-type(4) {
+  background: radial-gradient(#6e3482, #f5ebfa);
+  /* color: lime; */
+}
+
+.aktiv_box {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  aspect-ratio: 1/1;
+  content: '';
+  background-color: #3dec63;
+  border-radius: 50%;
+  animation: showBubble 2s linear infinite;
+}
+
+@keyframes showBubble {
+  0% {
+    opacity: 0;
+    width: 10px;
+  }
+  50% {
+    opacity: 1;
+    width: 20px;
+  }
+  100% {
+    opacity: 0;
+    width: 30px;
+  }
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 2rem;
+  letter-spacing: 2px;
+  color: #38979c;
+  font-weight: 500;
+  border: none;
+  background: #e1dfe5;
+  cursor: pointer;
+  transition: 0.4s all ease-in-out;
+}
+
+button:hover {
+  color: #f04770;
+  transform: scale(0.95);
+}
